@@ -1,14 +1,51 @@
-      
-function showDetails() {
-    let name = document.getElementById("nameSelect").value;
+let selectedName = "";
 
+function handleNameSelect() {
+    let name = document.getElementById("nameSelect").value;
+    let okBtn = document.getElementById("okBtn");
+    
+    if (name === "") {
+        okBtn.disabled = true;
+    } else {
+        okBtn.disabled = false;
+    }
+    selectedName = name;
+}
+
+// Attach change event to dropdown
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("nameSelect").addEventListener("change", handleNameSelect);
+});
+
+function showConfirmation() {
+    if (selectedName === "") {
+        alert("Please select a person first!");
+        return;
+    }
+    
+    let modal = document.getElementById("confirmModal");
+    modal.style.display = "block";
+}
+
+function confirmYes() {
+    let modal = document.getElementById("confirmModal");
+    modal.style.display = "none";
+    showDetails();
+}
+
+function confirmCancel() {
+    let modal = document.getElementById("confirmModal");
+    modal.style.display = "none";
+}
+
+function showDetails() {
+    let name = selectedName;
     let photo = document.getElementById("photo");
     let info = document.getElementById("infoText");
 
     // Remove frame before adding new one
     photo.classList.remove("photo-james");
-	//photo-james-blue
-	 photo.classList.remove("photo-james-blue");
+    photo.classList.remove("photo-james-blue");
 
     // Mapping names to photos
     let photos = {
@@ -61,11 +98,9 @@ function showDetails() {
     photo.style.display = "block";
     info.innerHTML = details[name];
 
-    // ⭐ Apply special frame ONLY for Elon Musk
+    // Apply special frame ONLY for James Gosling
     if (name === "james") {
         photo.classList.add("photo-james");
-		photo.classList.add("photo-james-blue");
+        photo.classList.add("photo-james-blue");
     }
 }
-
-        
