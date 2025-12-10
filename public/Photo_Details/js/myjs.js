@@ -65,7 +65,8 @@ function showDetails() {
         "Sundar_Pichai": "images/Sundar_Pichai.jpg",
         "satyanadella": "images/satyanadella.jpg",                
         "AdaLovelace": "images/AdaLovelace.jpg",
-        "madhu": "images/madhu.jpg"
+        "madhu": "images/madhu.jpg",
+        "rekha_sakipalli": "images/rekha_sakipalli.jpg"
     };
 
     // Mapping details
@@ -85,7 +86,8 @@ function showDetails() {
         "tim_berner": "Tim Berners-Lee invented the World Wide Web.",
         "Sundar_Pichai": "Sundar Pichai is the CEO of Google.",
         "satyanadella": "Satya Nadella is the CEO of Microsoft.",
-        "AdaLovelace": "Ada Lovelace was the first computer programmer."
+        "AdaLovelace": "Ada Lovelace was the first computer programmer.",
+        "rekha_sakipalli": "Rekha Sakipalli - CSE (AI&ML), 24955A6614."
     };
 
     if (name === "") {
